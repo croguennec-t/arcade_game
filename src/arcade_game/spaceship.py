@@ -56,8 +56,15 @@ class Spaceship :
 
     def _move(self):
         """déplacement avec les touches de directions"""
-        if pyxel.btn(pyxel.KEY_RIGHT):
-            self.x += 1
+        if pyxel.btn(pyxel.KEY_RIGHT) and self.x<self.jeu.w-8:
+            self.x += 2
+        elif pyxel.btn(pyxel.KEY_LEFT) and self.x > 0:
+            self.x -= 2
+        elif pyxel.btn(pyxel.KEY_DOWN) and self.y<self.jeu.h-8:
+            self.y += 2
+        elif pyxel.btn(pyxel.KEY_UP) and self.y>0:
+            self.y -= 4
+       
 
     # =====================================================
     # == DRAW
